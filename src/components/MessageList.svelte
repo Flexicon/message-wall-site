@@ -8,7 +8,9 @@
   export let messages = [];
 
   function removeMessage(message) {
-    dispatch("remove-message", message._id);
+    if (confirm('Are you sure you want to delete this message?')) {
+      dispatch("remove-message", message._id);
+    }
   }
 </script>
 
