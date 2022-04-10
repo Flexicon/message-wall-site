@@ -9,7 +9,7 @@
 
   function removeMessage(message) {
     if (confirm('Are you sure you want to delete this message?')) {
-      dispatch("remove-message", message._id);
+      dispatch("remove-message", message.id);
     }
   }
 </script>
@@ -64,7 +64,7 @@
 </style>
 
 <div class="message-list">
-  {#each messages as message, i (message._id)}
+  {#each messages as message, i (message.id)}
     <article
       class="graffiti-font"
       in:fly={{ x: -1000, duration: 500, delay: 200 * i }}
